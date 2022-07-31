@@ -1,17 +1,105 @@
+('use strict')
+
+
+// Arrays containing number formats
+
+const mtnNumbers = ["0803", "0816", "0806", "0903", "0813", "0810", "0703", "0706", "0814", "0906", "0913", "0704"]
+
+const gloNumbers = ["0805", "0905", "0807", "0811", "0705", "0815"]
+
+const airtelNumbers = ["0907", "0708", "0802", "0902", "0812", "0808", "0701", "0912", "0904"]
+
+const nineMobileNumbers = ["0817", "0809", "0818", "0908", "0909"]
+
+// All variables to work with
+const text = document.getElementById("text");
+const input = document.getElementById("fn");
+const btn = document.getElementById("submit");
+const mtn = document.getElementById("mtn")
+const glo = document.getElementById("glo")
+const air = document.getElementById("airtel")
+const eti = document.getElementById("9mobile")
+const lmtn = document.getElementById("lmtn")
+const lglo = document.getElementById("lglo")
+const lair = document.getElementById("lair")
+const leti = document.getElementById("leti")
+const mail = document.getElementById("email")
+
+
+
+let message = document.getElementById("text");
+let name = document.getElementById("username");
+let submit = document.querySelector("#check");
+let userRes = document.getElementById("userInput");
+let form = document.getElementById("form")
+
 function startApp() {
-    // Your entire app should not necessarily be coded inside this 
-    // single function (though there's no penalty for that), 
-    // so create and use/call additional functions from here
-  
-    // pls remove the below and make some magic in here!
-    console.log('make magic in here!');
-  
-    const header = document.querySelector('h2');
-    if(header) {
-      header.textContent = 'make some magic here!!';
+  // Your entire app should not necessarily be coded inside this 
+  // single function (though there's no penalty for that), 
+  // so create and use/call additional functions from here
+
+  // pls remove the below and make some magic in here!
+
+
+
+  //checks the input value and runs the network checker function 
+
+
+  submit.addEventListener("click", collecUserInput)
+  function collecUserInput(event) {
+    event.preventDefault()
+
+    let username = name.value;
+    let userInput = userRes.value.substr(0, 4);
+
+
+    if (userRes.value.length < 11 || userRes.value.length > 11) {
+      alert(`Sorry ${username}, your number is incorrect, please try again`)
+    } else {
+      checkNetwork(userInput, username);
+
     }
-  };
-  
-  // ======= DO NOT EDIT ============== //
-  export default startApp;
+
+
+  }
+
+
+
+
+  // function to check the network provider
+  function checkNetwork(userInput, username) {
+    if (mtnNumbers.includes(userInput)) {
+
+      message.innerHTML = `Hello ${username},`
+      form.style.display = "none"
+      mtn.style.display = "block"
+      lmtn.placeholder = userRes.value
+
+    } else if (gloNumbers.includes(userInput)) {
+      message.innerHTML = `Hello ${username},`
+      form.style.display = "none"
+      glo.style.display = "block"
+      lglo.placeholder = userRes.value
+
+
+    } else if (airtelNumbers.includes(userInput)) {
+      message.innerHTML = `Hello ${username},`
+      form.style.display = "none"
+      air.style.display = "block"
+      lair.placeholder = userRes.value
+
+    } else if (nineMobileNumbers.includes(userInput)) {
+      message.innerHTML = `Hello ${username},`
+      form.style.display = "none"
+      eti.style.display = "block"
+      leti.placeholder = userRes.value
+    } else {
+      alert(`Hey ${username}, I guess your phone number is new, we don't recognise this number`)
+    }
+  }
+
+};
+
+// ======= DO NOT EDIT ============== //
+export default startApp;
   // ======= EEND DO NOT EDIT ========= //

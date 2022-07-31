@@ -1,19 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name of chosen challenge</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHONIE APP</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link href="style.css" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/product-sans" rel="stylesheet" />
 </head>
-<body>
-    
-    <h2>make some magic here!!</h2>
 
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
-    <script src="index.mjs" type="module"></script>
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
+<body>
+  <main>
+    <div class="container left">
+      <h1>Identify the telecom carrier of your telephone with just a <a href="#right"><mark>click! </mark></a>
+      </h1>
+      <img src="assets/img.png" alt="three business young women with phones">
+    </div>
+    <div class="container right" id="right">
+      <h1 id="text">Welcome to phonie App!</h1>
+
+
+      <form action="" id="form">
+        <div>
+          <label for="username">Type in your name</label>
+          <input placeholder="John Doe" name="username" id="username" required>
+        </div>
+
+        <div>
+          <label for="number">Type in your phone number</label>
+          <div class="num">
+            <select id="code">
+              <option>+234</option>
+              <option>+244</option>
+              <option>+237</option>
+              <option>+242</option>
+              <option>+247</option>
+              <option>+232</option>
+            </select>
+            <input type="tel" name="number" id="userInput">
+          </div>
+        </div>
+        <button id="check">Submit</button>
+      </form>
+
+
+      <div class="container" id="mtn">
+        <form action="">
+          <div>
+            <label for="username">Your Telephone Carrier is MTN</label>
+
+            <div class="icon">
+              <img src="./assets/mtn.jpg" alt="MTN Logo">
+              <input name="username" id="lmtn" readonly>
+            </div>
+          </div>
+
+
+          <button id="submit">Reset</button>
+        </form>
+      </div>
+
+      <div class="container" id="glo">
+        <form action="">
+          <div>
+            <label for="username">Your Telephone Carrier is Glo</label>
+
+            <div class="icon">
+              <img src="./assets/glo.jpg" alt="Glo Logo">
+              <input name="username" id="lglo" readonly>
+            </div>
+          </div>
+
+
+          <button id="submit">Reset</button>
+        </form>
+      </div>
+
+      <div class="container" id="airtel">
+        <form action="">
+          <div>
+            <label for="username">Your Telephone Carrier is Airtel</label>
+
+            <div class="icon">
+              <img src="./assets/airtel.jpg" alt="Airtel Logo">
+              <input name="username" id="lair" readonly>
+            </div>
+          </div>
+
+          <button id="submitA-Za-z]">Reset</button>
+        </form>
+      </div>
+
+      <div class="container" id="9mobile">
+        <form action="">
+          <div>
+            <label for="username">Your Telephone Carrier is 9mobile</label>
+
+            <div class="icon">
+              <img src="./assets/9mobile.jpg" alt="9mobile Logo">
+              <input name="username" id="leti" readonly>
+            </div>
+          </div>
+
+          <button id="submit">Reset</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+  <!--       </div> -->
+
+
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
+  <script src="index.mjs" type="module"></script>
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
 </body>
+
 </html>
